@@ -1,25 +1,23 @@
-"""
-This script runs the application using a development server.
-It contains the definition of routes and views for the application.
-"""
+from flask import Flask, url_for, redirect, render_template, request
 
-from flask import Flask
 app = Flask(__name__)
 
-# Make the WSGI interface available at the top level so wfastcgi can get it.
-wsgi_app = app.wsgi_app
-
-
 @app.route('/')
-def hello():
-    """Renders a sample page."""
-    return "Hello World!"
+def dashboard():
+    return "this is the dashboard"
 
-if __name__ == '__main__':
-    import os
-    HOST = os.environ.get('SERVER_HOST', 'localhost')
-    try:
-        PORT = int(os.environ.get('SERVER_PORT', '5555'))
-    except ValueError:
-        PORT = 5555
-    app.run(HOST, PORT)
+@app.route('/leaderboard')
+def leaderboard():
+    return "this is the leaderboard"
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        if email == "test@alenorze.pro" and password == "123":
+            return redirect(url_for('dashboard'))
+    return render_template("login.html")
+
+if __name__  == "__main__":
+    app.run(debug=True)
