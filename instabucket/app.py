@@ -1,6 +1,12 @@
 from flask import Flask, url_for, redirect, render_template, request
+import grader 
+
 
 app = Flask(__name__)
+
+# Initialize the validator
+validator = grader.createValidator("data/gold.csv")
+
 
 @app.route('/')
 def dashboard():
