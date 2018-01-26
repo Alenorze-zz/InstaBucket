@@ -4,5 +4,7 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 pip==9.0.1
-setuptools==28.8.0
+rethinkdb==2.3.0.post6
+setuptools==38.4.0
 Werkzeug==0.14.1
+wheel==0.30.0
