@@ -1,11 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
     <form class="form-signin" action="/login" method="post">
-      <h2 class="form-signin-heading">Please sign in</h2>
+      <h3 class="form-signin-heading">Please sign in</h2>
       <label for="inputEmail" class="sr-only">Columbia email address</label>
       <input type="email" name="email" id="inputEmail" class="form-control" placeholder="foo.bar@columbia.edu" required autofocus>
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+      <hr>
+    <form class="form-signin" action="/signup" method="post">
+      <h4 class="form-signin-heading">New here? Sign up!</h4>
+      <p>Enter your columbia email and we'll email you login details</p>
+      <label for="inputEmail" class="sr-only">Columbia email address</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="foo.bar@columbia.edu" required>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
     </form>
 {% endblock %}
