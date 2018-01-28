@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="submission-prediction" id="submission-form" action="/" method="post">
+      <h2 class="predictions-heading">Prediction Submission</h2>
+
+      <textarea name="predictions" id="predictions" class="form-control" form="submission-form" rows="10"
+        placeholder="Copy paste your csv file (along with the headers) here as it is" required autofocus></textarea>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+    </form>
+{% endblock %}
